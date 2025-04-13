@@ -14,20 +14,8 @@ This pipeline:
 - Converts valid files to **Parquet** format
 - Stores **raw and clean** data in RDS MySQL
 - Generates a **sales summary**
+- delete the **raw folder**
 - Sends **SNS notifications** on success or failure
-
----
-
-## 🖼️ Architecture Diagram
-
-```
-[Client] → [S3 (raw/)] → [Lambda Triggered] 
-                          ↳ Validate & Clean
-                          ↳ Write to RDS (sales, sales_tgt, sales_summary)
-                          ↳ Save Parquet to S3 (processed/)
-                          ↳ Move bad files to (quarantine/)
-                          ↳ SNS Notification
-```
 
 ---
 
@@ -43,8 +31,6 @@ This pipeline:
    quarantine/
    processed/
    ```
-
-3. Upload a sample `.csv` or `.json` sales file into `raw/`.
 
 ---
 
@@ -83,8 +69,6 @@ CREATE TABLE IF NOT EXISTS sales (
 CREATE TABLE IF NOT EXISTS sales_tgt LIKE sales;
 ```
 
-> You can also copy from the `sales` table or create with your ORM (e.g., `pandas.to_sql()` will create this for you automatically if the table doesn't exist).
-
 #### ✅ `sales_summary` (aggregated total sales by country)
 
 ```sql
@@ -95,6 +79,8 @@ CREATE TABLE IF NOT EXISTS sales_summary (
     total_profit DECIMAL(15, 2),
     summary_date TIMESTAMP
 );
+
+##### Please note that if you have not created the table and its schema it will create automatically. Use the sample data I have provided in the repo. Based upon your requirement you can edit the code and create the schema according to your requirement/source file.
 ```
 
 ---
