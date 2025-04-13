@@ -80,8 +80,10 @@ CREATE TABLE IF NOT EXISTS sales_summary (
     summary_date TIMESTAMP
 );
 
-##### Please note that if you have not created the table and its schema it will create automatically. Use the sample data I have provided in the repo. Based upon your requirement you can edit the code and create the schema according to your requirement/source file.
 ```
+
+##### Please note that if you have not created the table and its schema it will create automatically. Use the sample data I have provided in the repo. Based upon your requirement you can edit the code and create the schema according to your requirement/source file.
+
 
 ---
 
