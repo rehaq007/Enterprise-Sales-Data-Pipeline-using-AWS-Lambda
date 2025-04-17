@@ -102,7 +102,7 @@ Use the **sample data provided in this repo**. Based upon your requirement, you 
  3. **arn:aws:lambda:us-east-1:030798167757:layer:Pymysql_dehlive:1**
 
 #### Add 'Environment Variables' from Configuration -
-** Key - dbname and Value - salesdb_dev**
+**Key - dbname and Value - salesdb_dev**
 
 ---
 
