@@ -101,8 +101,8 @@ Use the **sample data provided in this repo**. Based upon your requirement, you 
  2. **arn:aws:lambda:us-east-1:030798167757:layer:Aws_sql_alchemy_dehlive:4**
  3. **arn:aws:lambda:us-east-1:030798167757:layer:Pymysql_dehlive:1**
 
-#### Add 'Environment Variables' from Configuration -
-**Key - dbname and Value - salesdb_dev**
+#### Add 'Environment Variables' from Configuration as below -
+Key - dbname and Value - salesdb_dev
 
 ---
 
