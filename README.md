@@ -96,9 +96,10 @@ Use the **sample data provided in this repo**. Based upon your requirement, you 
 #### Add Layers to the Lambda Function -
 - Scroll down, you will find the option to add Layers. Click on 'Add Layers'.
 - You need to add below 3 Layers using ARN:
-  **arn:aws:lambda:us-east-1:336392948345:layer:AWSSDKPandas-Python310:23**
-  **arn:aws:lambda:us-east-1:030798167757:layer:Aws_sql_alchemy_dehlive:4**
-  **arn:aws:lambda:us-east-1:030798167757:layer:Pymysql_dehlive:1**
+  
+ - **arn:aws:lambda:us-east-1:336392948345:layer:AWSSDKPandas-Python310:23**
+ - **arn:aws:lambda:us-east-1:030798167757:layer:Aws_sql_alchemy_dehlive:4**
+ - **arn:aws:lambda:us-east-1:030798167757:layer:Pymysql_dehlive:1**
 ---
 
 ### 7. ✅ Test the Pipeline
