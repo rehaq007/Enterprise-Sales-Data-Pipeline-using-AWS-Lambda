@@ -42,7 +42,7 @@ This project automates the process of ingesting sales data from Amazon S3, valid
 
 - Launch a MySQL-compatible RDS database
 - Create a database (e.g., `salesdb`)
-- Connect the database with the client. You can use dbeaver. You can use the credentials from aws secret manager from below step to connect to your mysql RDS.
+- Connect the database with the client. You can use dbeaver. You can use the credentials from aws secret manager from below step to connect to your MySQL RDS.
 
 **Please note that if you have not created the table and its schema it will create automatically.**
 
@@ -53,7 +53,7 @@ Use the **sample data provided in this repo**. Based upon your requirement, you 
 ### 3. 🔐 Create a Secrets Manager Entry
 
 - Go to **AWS Secrets Manager**
-- Create a secret with the following key-value pairs:
+- Create a secret with the dbname as "salesdb". You would need the below info to connect your client with the MySQL DB RDS
   ```json
   {
     "username": "your_db_user",
@@ -97,9 +97,13 @@ Use the **sample data provided in this repo**. Based upon your requirement, you 
 - Scroll down, you will find the option to add Layers. Click on 'Add Layers'.
 - You need to add below 3 Layers using ARN:
   
- - **arn:aws:lambda:us-east-1:336392948345:layer:AWSSDKPandas-Python310:23**
- - **arn:aws:lambda:us-east-1:030798167757:layer:Aws_sql_alchemy_dehlive:4**
- - **arn:aws:lambda:us-east-1:030798167757:layer:Pymysql_dehlive:1**
+ 1. **arn:aws:lambda:us-east-1:336392948345:layer:AWSSDKPandas-Python310:23**
+ 2. **arn:aws:lambda:us-east-1:030798167757:layer:Aws_sql_alchemy_dehlive:4**
+ 3. **arn:aws:lambda:us-east-1:030798167757:layer:Pymysql_dehlive:1**
+
+#### Add 'Environment Variables' from Configuration -
+** Key - dbname and Value - salesdb_dev**
+
 ---
 
 ### 7. ✅ Test the Pipeline
