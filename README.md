@@ -78,15 +78,15 @@ Use the **sample data provided in this repo**. Based upon your requirement, you 
 - Go to **AWS Lambda** and create a new function (choose Python 3.10 runtime)
 - Set up the **S3 trigger** for the `raw/` folder
    
-      -Go to the AWS S3 Console.
-      -Open your S3 bucket.
-      -Click the Properties tab.
-      -Scroll down to Event notifications → Click Create event notification.
-      -Enter a name: ex. S3FileUploadTrigger.
-      -Event Type: Select 'All objects create event'
-      -Prefix: Enter raw/ (so only files in inbound/ trigger Lambda).
-      -Destination: Choose Lambda function
-      -Click Save.
+  - Go to the AWS S3 Console.
+  - Open your S3 bucket.
+  - Click the Properties tab.
+  - Scroll down to Event notifications → Click Create event notification.
+  - Enter a name: ex. S3FileUploadTrigger.
+  - Event Type: Select 'All objects create event'
+  -  Prefix: Enter raw/ (so only files in raw/ trigger Lambda).
+  - Destination: Choose Lambda function
+  - Click Save.
 
 - Add the following **IAM permissions** to the Lambda function role:
   - S3 (read/write)
