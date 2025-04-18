@@ -25,7 +25,7 @@ This project automates the process of ingesting sales data from Amazon S3, valid
 
 ---
 
-### 1. 📁 Prepare Your S3 Bucket
+### 1. Prepare Your S3 Bucket
 
 - Create an S3 bucket (e.g., `dehlive-sales-<your-account-id>-us-east-1`)
 - Inside the bucket, create a folder structure like:
@@ -38,7 +38,7 @@ This project automates the process of ingesting sales data from Amazon S3, valid
 
 ---
 
-### 2. 🥺 Prepare Your RDS MySQL Database
+### 2. Prepare Your RDS MySQL Database
 
 - Launch a MySQL-compatible RDS database
 - Create a database (e.g., `salesdb`)
@@ -50,7 +50,7 @@ Use the **sample data provided in this repo**. Based upon your requirement, you 
 
 ---
 
-### 3. 🔐 Create a Secrets Manager Entry
+### 3. Create a Secrets Manager Entry
 
 - Go to **AWS Secrets Manager**
 - Create a secret with the dbname as "salesdb". You would need the below info to connect your client with the MySQL DB RDS
@@ -66,14 +66,14 @@ Use the **sample data provided in this repo**. Based upon your requirement, you 
 
 ---
 
-### 4. 📨 Create an SNS Topic
+### 4. Create an SNS Topic
 
 - Go to **Amazon SNS** and create a topic named `dehtopic`
 - Add your email or SMS subscription to receive notifications
 
 ---
 
-### 5. 🤖 Deploy the Lambda Function
+### 5. Deploy the Lambda Function
 
 - Go to **AWS Lambda** and create a new function (choose Python 3.10 runtime)
 - Set up the **S3 trigger** for the `raw/` folder
@@ -85,7 +85,7 @@ Use the **sample data provided in this repo**. Based upon your requirement, you 
 
 ---
 
-### 6. 💪 Upload the Lambda Code
+### 6. Upload the Lambda Code
 
 - Open the `lambda_function.py` file from this repository
 - Copy the entire code and paste it into the **Lambda inline editor**
@@ -106,7 +106,7 @@ Key - dbname and Value - salesdb_dev
 
 ---
 
-### 7. ✅ Test the Pipeline
+### 7. Test the Pipeline
 
 - Upload a valid or invalid file into the `raw/` folder in your S3 bucket
 - Check **CloudWatch logs** for processing info
